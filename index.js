@@ -22,7 +22,7 @@ for (const file of files) {
     const p = path.parse(file)
     // Get the path relative to the OUTFILE so that exports are correct
     const srcDir = path.relative(path.dirname(OUTFILE), SRC_DIR)
-    const _import = `import { ${ p.name } as _${ p.name } } from "./${ path.posix.join(srcDir, file) }"\n`
+    const _import = `import { default as _${ p.name } } from "./${ path.posix.join(srcDir, file) }"\n`
     const _export = `export { _${ p.name } as ${ p.name } }\n`
     fs.appendFileSync(OUTFILE, _import)
     fs.appendFileSync(OUTFILE, _export)
