@@ -1,0 +1,16 @@
+{
+  "name": "folder-module",
+  "version": "1.0.9",
+  "description": "This creates a single module file from a directory of default exports",
+  "bin": {
+    "folder-module": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James \"The Jamesernator\" Browning",
+  "license": "MIT",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
