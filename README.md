@@ -1,5 +1,6 @@
-
 # Folder Modules
+
+[![Build Status](https://travis-ci.org/jdeniau/folder-module.svg?branch=master)](https://travis-ci.org/jdeniau/folder-module)
 
 ### Usage
 
