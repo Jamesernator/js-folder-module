@@ -60,6 +60,9 @@ function folderModule(srcDir, outfileArg) {
 
   // and build the export statements
   const files = fs.readdirSync(srcDir);
+  const importList = [];
+  const exportList = [];
+
   for (const file of files) {
     const p = path.parse(file);
     // Get the path relative to the outfile so that exports are correct
@@ -70,9 +73,16 @@ function folderModule(srcDir, outfileArg) {
       file
     )}"\n`;
     const _export = `export { _${slug} as ${slug} }\n`;
-    fs.appendFileSync(outfile, _import);
-    fs.appendFileSync(outfile, _export);
+    importList.push(_import);
+    exportList.push(_export);
   }
+
+  importList.forEach(_import => {
+    fs.appendFileSync(outfile, _import);
+  });
+  exportList.forEach(_export => {
+    fs.appendFileSync(outfile, _export);
+  });
 }
 
 if (process.env.NODE_ENV === 'test') {
