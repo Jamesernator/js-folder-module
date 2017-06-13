@@ -15,6 +15,7 @@
   "author": "James \"The Jamesernator\" Browning",
   "license": "MIT",
   "dependencies": {
+    "camelcase": "^4.1.0",
     "mkdirp": "^0.5.1"
   }
 }
