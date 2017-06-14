@@ -6,11 +6,11 @@
     "folder-module": "./index.js"
   },
   "scripts": {
-    "test": "rm tests/*.js && jest"
+    "test": "rm -f tests/*.js && jest"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/Jamesernator/js-folder-module"
+    "type": "git",
+    "url": "https://github.com/Jamesernator/js-folder-module"
   },
   "author": "James \"The Jamesernator\" Browning",
   "license": "MIT",
@@ -19,11 +19,13 @@
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.5.2",
     "jest": "^20.0.4"
   },
   "jest": {
-      "modulePathIgnorePatterns": [
-          "/tests/"
-      ]
+    "modulePathIgnorePatterns": [
+      "/tests/"
+    ]
   }
 }

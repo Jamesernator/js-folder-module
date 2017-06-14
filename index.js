@@ -71,8 +71,8 @@ function folderModule(srcDir, outfileArg) {
     const _import = `import { default as _${slug} } from "./${path.posix.join(
       localSrcDir,
       file
-    )}"\n`;
-    const _export = `export { _${slug} as ${slug} }\n`;
+    )}";\n`;
+    const _export = `_${slug} as ${slug},\n`;
     importList.push(_import);
     exportList.push(_export);
   }
@@ -80,9 +80,12 @@ function folderModule(srcDir, outfileArg) {
   importList.forEach(_import => {
     fs.appendFileSync(outfile, _import);
   });
+
+  fs.appendFileSync(outfile, 'export {\n');
   exportList.forEach(_export => {
-    fs.appendFileSync(outfile, _export);
+    fs.appendFileSync(outfile, `  ${_export}`);
   });
+  fs.appendFileSync(outfile, '};\n');
 }
 
 if (process.env.NODE_ENV === 'test') {

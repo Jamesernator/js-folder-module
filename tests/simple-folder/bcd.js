@@ -1,4 +1,4 @@
-export const b = () { console.log('b'); }
-export const c = () { console.log('c'); }
-export default d = () { console.log('d'); }
+export const b = () => { return 'b'; }
+export const c = () => { return 'c'; }
+export default () => { return 'd'; }
 
