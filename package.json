@@ -6,15 +6,20 @@
     "folder-module": "./index.js"
   },
   "scripts": {
+    "build": "babel folder-module.js > index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/Jamesernator/js-folder-module"
+    "type": "git",
+    "url": "https://github.com/Jamesernator/js-folder-module"
   },
   "author": "James \"The Jamesernator\" Browning",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-generator": "^6.25.0",
+    "babel-plugin-transform-unicode-property-regex": "^2.0.2",
+    "colors": "^1.1.2",
     "mkdirp": "^0.5.1"
   }
 }
