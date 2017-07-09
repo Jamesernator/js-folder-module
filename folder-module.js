@@ -101,7 +101,7 @@ function folderModule(directory, options={}) {
         .join('\n')
 
     mkdirp.sync(path.dirname(outFile))
-    fs.writeFileSync(outFile, string)
+    fs.writeFileSync(outFile, string + '\n')
 }
 
 module.exports = folderModule

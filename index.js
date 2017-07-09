@@ -83,7 +83,7 @@ function folderModule(directory, options = {}) {
     const string = exportNodes.map(generate).map(({ code }) => code).join('\n');
 
     mkdirp.sync(path.dirname(outFile));
-    fs.writeFileSync(outFile, string);
+    fs.writeFileSync(outFile, string + '\n');
 }
 
 module.exports = folderModule;
