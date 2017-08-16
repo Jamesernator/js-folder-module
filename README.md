@@ -17,22 +17,16 @@ a single file of exports of the default of each of the individual files within t
 For example a folder `foo/` with files `a.js`, `b.js` and `default.js` will generate the file `./foo.js`:
 
 ```js
-import _a from "./foo/a.js"
-export {_a as a}
-import _b from "./foo/b.js"
-export {_b as b}
-import _default from "./foo/default.js"
-export {_default as default}
+export { default as a } from "./foo/a.js"
+export { default as b } from "./foo/b.js"
+export { default } from "./foo/default.js"
 ```
 
 You can also specify a filename and paths will be resolved to that filename e.g.
 For the above with an out file name `./bar/baz/foo.js` you'll get:
 
 ```js
-import _a from "../../foo/a.js"
-export {_a as a}
-import _b from "../../foo/b.js"
-export {_b as b}
-import _default from "../../foo/default.js"
-export {_default as default}
+export { default as a } from "../../foo/a.js"
+export { default as b } from "../../foo/b.js"
+export { default } from "../../foo/default.js"
 ```
