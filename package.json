@@ -1,6 +1,6 @@
 {
   "name": "folder-module",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "This creates a single module file from a directory of default exports",
   "bin": {
     "folder-module": "./index.js"
