@@ -20,13 +20,13 @@ function defaultConvert(filename) {
 
 function defaultIgnore(filename) {
     return filename.includes('/')
-        || filename.startsWith('#')
+        || filename.startsWith('--')
         || filename.startsWith('.')
         || path.parse(filename).ext === ''
 }
 
 function defaultOutFile(directory) {
-    return './' + path.format(path.parse(directory)) + '.js'
+    return `./${ path.format(path.parse(directory)) }.js`
 }
 
 function* files(directory) {
@@ -101,7 +101,7 @@ function folderModule(directory, options={}) {
         .join('\n')
 
     mkdirp.sync(path.dirname(outFile))
-    fs.writeFileSync(outFile, string + '\n')
+    fs.writeFileSync(outFile, `${ string }\n`)
 }
 
 module.exports = folderModule
